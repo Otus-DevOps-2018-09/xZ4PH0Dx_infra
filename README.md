@@ -3,8 +3,9 @@ xZ4PH0Dx Infra repository
 Homework 3:
 
 ## IP Addresses:
-bastion_IP=35.195.182.38
-someinternalhost=10.166.0.2
+
+bastion_IP = 35.195.182.38
+someinternalhost_IP = 10.166.0.2 
 
 One-line command to ssh to someinternalhost:
 ```bash
