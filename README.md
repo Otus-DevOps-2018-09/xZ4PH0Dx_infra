@@ -5,7 +5,7 @@ xZ4PH0Dx Infra repository
 ## IP Addresses:
 
 bastion_IP = 35.195.182.38
-someinternalhost_IP = 10.166.0.2 
+someinternalhost_IP = 10.166.0.2
 
 One-line command to ssh to someinternalhost:
 ```bash
@@ -31,15 +31,15 @@ Host someinternalhost
 * Installed gcloud
 * Created instance from
 * Installed Ruby, Mongodb, Bundle
-* Cloned and installed with Bundle reddit-app 
+* Cloned and installed with Bundle reddit-app
 * Created bash-scripts for installing and deploying an app
 * Completed additional tasks
 
 ## IP Addresses:
 ```bash
-testapp_IP = 35.198.167.169
-testapp_port = 9292 
-``` 
+testapp_IP = 35.233.115.197
+testapp_port = 9292
+```
 
 ## Additional tasks:
 
