@@ -28,13 +28,20 @@ Host someinternalhost
     ProxyCommand ssh bastion 'nc %h %p'
 ```
 ## Homework 4:
-11
+* Installed gcloud
+* Created instance from
+* Installed Ruby, Mongodb, Bundle
+* Cloned and installed with Bundle reddit-app 
+* Created bash-scripts for installing and deploying an app
+* Completed additional tasks
 
 ## IP Addresses:
 ```bash
 testapp_IP = 35.198.167.169
 testapp_port = 9292 
 ``` 
+
+## Additional tasks:
 
 To automatically deploy and start our app you could use that gcloud command:
 ```bash
