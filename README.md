@@ -62,3 +62,28 @@ gcloud compute firewall-rules create default-puma-server \
 --allow tcp:9292 \
 --target-tags='puma-server'
 ```
+
+## Homework 5
+ * Installed packer
+ * Set up Application Default Credentials 
+ * Created ubuntu16 template for packer and built the image reddit-base
+ * Added additional user variables to ubuntu16 template
+ * Created variables.json for security reasons of no showing private information
+ * Created GCP vm using reddit-base image
+
+## Tasks signed with asterisk:
+ * Baked the image reddit-full
+ * Created shell script to automatically deploy image to virtual machine
+## How to run:
+ To speed-up process of deploying image to virtual machine you could use that script:
+``` bash
+gcloud compute instances create reddit-app \
+   --image-family reddit-full \
+   --image-project=infra-207221 \
+   --machine-type=g1-small \
+   --tags puma-server \
+   --network-interface network=default,subnet=default \
+   --restart-on-failure
+```
+## How to get on site:
+[Click here](http://35.195.116.156:9292/)
