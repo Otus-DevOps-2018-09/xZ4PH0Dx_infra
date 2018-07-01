@@ -17,4 +17,3 @@ resource "google_compute_http_health_check" "default" {
   request_path = "/"
   port         = "9292"
 }
-
