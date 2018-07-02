@@ -1,32 +1,46 @@
 # xZ4PH0Dx_infra
 xZ4PH0Dx Infra repository
-## Homework 3:
 
-## IP Addresses:
+## Homework 6
 
-bastion_IP = 35.195.182.38
-someinternalhost_IP = 10.166.0.2
+* Installed and initialized Terraform
+* Created main configuration file main.tf
+* Created output variables file
+* Realized behavior of Terraform show and plan commands
+* Added description of firewall rule to main.tf file
+* Added provisioners to deploy puma service
+* Created variables file and template for pushing to git repo
 
-One-line command to ssh to someinternalhost:
-```bash
-ssh -i ~/.ssh/appuser -A appuser@35.195.182.38 -t ssh 10.166.0.2
+### Asterisk tasks:
+* The ssh key will be deleted next time you execute terraform apply command because in main.tf there is not any mention about appuser_web ssh key. 
+* There's one database server for one application. That's redundant and will make your program behavior unstable.
+
+## Homework 5
+ * Installed packer
+ * Set up Application Default Credentials 
+ * Created ubuntu16 template for packer and built the image reddit-base
+ * Added additional user variables to ubuntu16 template
+ * Created variables.json for security reasons of no showing private information
+ * Created GCP vm using reddit-base image
+
+## Tasks signed with asterisk:
+ * Baked the image reddit-full
+ * Created shell script to automatically deploy image to virtual machine
+ 
+## How to run:
+ To speed-up process of deploying image to virtual machine you could use that script:
+``` bash
+gcloud compute instances create reddit-app \
+   --image-family reddit-full \
+   --image-project=infra-207221 \
+   --machine-type=g1-small \
+   --tags puma-server \
+   --network-interface network=default,subnet=default \
+   --restart-on-failure
 ```
+## How to get on site:
+[Click here](http://35.195.116.156:9292/)
 
-To pass to someinternalhost with _ssh someinternalhost_ you add to ~/.ssh/config file:
-```bash
-Host bastion
-    User appuser
-    Hostname 35.195.182.38
-    Port 22
-    IdentityFile ~/.ssh/appuser
-    ForwardAgent yes
-Host someinternalhost
-    User appuser
-    Hostname 10.166.0.2
-    Port 22
-    ForwardAgent yes
-    ProxyCommand ssh bastion 'nc %h %p'
-```
 ## Homework 4:
 * Installed gcloud
 * Created instance from
@@ -63,27 +77,30 @@ gcloud compute firewall-rules create default-puma-server \
 --target-tags='puma-server'
 ```
 
-## Homework 5
- * Installed packer
- * Set up Application Default Credentials 
- * Created ubuntu16 template for packer and built the image reddit-base
- * Added additional user variables to ubuntu16 template
- * Created variables.json for security reasons of no showing private information
- * Created GCP vm using reddit-base image
+## Homework 3:
 
-## Tasks signed with asterisk:
- * Baked the image reddit-full
- * Created shell script to automatically deploy image to virtual machine
-## How to run:
- To speed-up process of deploying image to virtual machine you could use that script:
-``` bash
-gcloud compute instances create reddit-app \
-   --image-family reddit-full \
-   --image-project=infra-207221 \
-   --machine-type=g1-small \
-   --tags puma-server \
-   --network-interface network=default,subnet=default \
-   --restart-on-failure
+## IP Addresses:
+
+bastion_IP = 35.195.182.38
+someinternalhost_IP = 10.166.0.2
+
+One-line command to ssh to someinternalhost:
+```bash
+ssh -i ~/.ssh/appuser -A appuser@35.195.182.38 -t ssh 10.166.0.2
 ```
-## How to get on site:
-[Click here](http://35.195.116.156:9292/)
+
+To pass to someinternalhost with _ssh someinternalhost_ you add to ~/.ssh/config file:
+```bash
+Host bastion
+    User appuser
+    Hostname 35.195.182.38
+    Port 22
+    IdentityFile ~/.ssh/appuser
+    ForwardAgent yes
+Host someinternalhost
+    User appuser
+    Hostname 10.166.0.2
+    Port 22
+    ForwardAgent yes
+    ProxyCommand ssh bastion 'nc %h %p'
+```
