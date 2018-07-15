@@ -8,10 +8,10 @@
   "_meta": {
     "hostvars": {
       "35.190.200.159": {
-        "name": "reddit-db"
+        "name": "reddit-app"
         },
       "35.240.45.100": {
-        "name": "reddit-app"
+        "name": "reddit-db"
         }
     }
   }
