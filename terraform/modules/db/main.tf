@@ -1,11 +1,11 @@
-data "template_file" "mongod_conf_tpl" {
+/*data "template_file" "mongod_conf_tpl" {
   template = "${file("../modules/db/files/mongod.conf.tpl")}"
 
   vars {
     mongodb_ip = "${var.mongodb_internal}"
   }
 }
-
+*/
 resource "google_compute_instance" "db" {
   name         = "reddit-db"
   machine_type = "g1-small"
@@ -32,7 +32,7 @@ resource "google_compute_instance" "db" {
     user = "appuser"
     private_key = "${file(var.private_key_path)}"
   }
-
+/*
   provisioner "file" {
     content = "${data.template_file.mongod_conf_tpl.rendered}"
     destination = "/tmp/mongod.conf"
@@ -41,6 +41,7 @@ resource "google_compute_instance" "db" {
   provisioner "remote-exec" {
     script = "../modules/db/files/set_mongod.sh"
   }
+*/
 }
 resource "google_compute_firewall" "firewall_mongo" {
   name = "allow-mongo-default"
