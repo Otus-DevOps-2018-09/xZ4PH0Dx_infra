@@ -1,6 +1,17 @@
 # xZ4PH0Dx_infra
 xZ4PH0Dx Infra repository
 
+## Homework 7
+* Added resource created from web to terraform state (terraform import ...)
+* Created static ip address resource (reddit-app-ip)
+* Created db- and app- images
+* main.tf was divisioned to modules
+* infrastructure code was divisioned to prod and stage
+
+### Tasks with asterisk:
+* Configured backend to store .tfstate file
+* Created provisioners to deploy app and db to servers (app server connects to db server via output variable)
+
 ## Homework 6
 
 * Installed and initialized Terraform
