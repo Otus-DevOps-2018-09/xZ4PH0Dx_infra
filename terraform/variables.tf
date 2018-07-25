@@ -1,5 +1,5 @@
 variable project {
-  description = "Project ID"
+  description = "Your Project ID"
 }
 
 variable region {
@@ -7,24 +7,7 @@ variable region {
   default     = "europe-west1"
 }
 
-variable public_key_path {
-  description = "Path to the public key used for ssh access"
+variable "bucket_name" {
+  description = "Your bucket name"
 }
 
-variable disk_image {
-  description = "Disk image"
-}
-
-variable private_key_path {
-  description = "Path to the private key used for ssh access"
-}
-
-variable zone {
-  description = "Zone"
-  default     = "europe-west1-b"
-}
-
-variable n_instances {
-  description = "Number of instances to create"
-  default     = 1
-}

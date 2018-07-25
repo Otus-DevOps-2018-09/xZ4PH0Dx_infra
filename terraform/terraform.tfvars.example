@@ -1,7 +1,8 @@
-project = "your_project_id"
+project = "Your project ID"
+private_key_path = "Path to your private key"
+public_key_path = "Path to your public key"
+bucket_name = "Your bucket name"
+disk_image = "Your disk image"
 
-public_key_path = "~/.ssh/appuser.pub"
 
-private_key_path = "~/.ssh/appuser"
 
-disk_image = "reddit-base"
