@@ -1,6 +1,15 @@
 # xZ4PH0Dx_infra
 xZ4PH0Dx Infra repository
 
+## Homework 8
+* Installed Ansible with pip
+* Configured Ansible to ping app- and db-hosts
+* Created inventory.yml
+* Created playbook for cloning repo
+
+### Tasks with asterisk:
+* Created get_inventory.py script for printing hosts json.
+
 ## Homework 7
 * Added resource created from web to terraform state (terraform import ...)
 * Created static ip address resource (reddit-app-ip)
