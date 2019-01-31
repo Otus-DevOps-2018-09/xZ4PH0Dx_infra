@@ -1,6 +1,45 @@
 # xZ4PH0Dx_infra
 xZ4PH0Dx Infra repository
 
+## Домашнее задание 10
+* Создана и адаптирована роль db(декомпозирована структурно согласно конвенции ansible-galaxy)
+* Создана и адаптирована роль app(декомпозирована структурно согласно конвенции ansible-galaxy)
+* Настроена работа с окружениями stage и prod
+* Настроены переменные окружения через group_vars
+* Настроено проксирование с помощью galaxy роли jdauphant.nginx
+* Создан плейбук для установки юзеров на инстансы с хранением кредов в vault
+
+## Домашнее задание 9
+* Закомментирован код с провижинингом из терраформа
+* Написан сценарий для переноса конфига MongoDB на удалённый хост по указанному пути
+* Изучена опция тестового прогона плейбука при помощи атрибута --check
+* Изучена опция handlers для перезапуска сервисов при изменении состояния таски
+* Провижининг адаптирован в один плейбук с одним сценарием с использованием опций --limit и --tags. Плохо тем, что нужно помнить на каком хосте какие таски и выполнять последовательно
+* Провижининг адаптирован в один плейбук и несколько сценариев. Проблема такого подхода в том, что с ростом числа управляемых сервисов будет тяжело разобраться в плейбуке
+* Провижининг адаптирован в несколько плейбуков
+* Билды пакера адаптированы с плейбуками ансибл
+* Новые инстансы собраны на основе новых билдов пакера с применением плейбуков ансибла для провижининга
+
+## Homework 8
+* Installed Ansible with pip
+* Configured Ansible to ping app- and db-hosts
+* Created inventory.yml
+* Created playbook for cloning repo
+
+### Tasks with asterisk:
+* Created get_inventory.py script for printing hosts json.
+
+## Homework 7
+* Added resource created from web to terraform state (terraform import ...)
+* Created static ip address resource (reddit-app-ip)
+* Created db- and app- images
+* main.tf was divisioned to modules
+* infrastructure code was divisioned to prod and stage
+
+### Tasks with asterisk:
+* Configured backend to store .tfstate file
+* Created provisioners to deploy app and db to servers (app server connects to db server via output variable)
+
 ## Homework 6
 
 * Installed and initialized Terraform
