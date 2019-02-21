@@ -1,0 +1,8 @@
+project = "Your project ID"
+private_key_path = "Path to your private key"
+public_key_path = "Path to your public key"
+bucket_name = "Your bucket name"
+disk_image = "Your disk image"
+
+
+
