@@ -1,11 +1,11 @@
-data "template_file" "reddit_service_tpl" {
+/*data "template_file" "reddit_service_tpl" {
   template = "${file("../modules/app/files/puma.service.tpl")}"
 
   vars {
     mongodb_internal = "${var.db_internal_ip}"
   }
 }
-
+*/
 resource "google_compute_instance" "app" {
   name         = "reddit-app"
   machine_type = "g1-small"
@@ -35,7 +35,7 @@ resource "google_compute_instance" "app" {
     agent = false
     private_key = "${file(var.private_key_path)}"
   }
-  
+/*  
   provisioner "file" {
     content = "${data.template_file.reddit_service_tpl.rendered}"
     destination = "/tmp/puma.service"
@@ -44,6 +44,7 @@ resource "google_compute_instance" "app" {
   provisioner "remote-exec" {
     script = "../modules/app/files/deploy.sh"
   }
+*/
 }
 
 resource "google_compute_address" "app_ip" {
